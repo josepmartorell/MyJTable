@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import encapsuladores.Contexto;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -17,6 +18,8 @@ public class Componentes {
         private ModeloDatos modeloDatos;
         private MyJTable myJTable;
         private JScrollPane JScrollpaneTabla;
+        private Object[] repositorio;
+        private Contexto contexto;
 
     public JTable getjTable() {
         return jTable;
@@ -49,6 +52,26 @@ public class Componentes {
     public void setJScrollpaneTabla(JScrollPane JScrollpaneTabla) {
         this.JScrollpaneTabla = JScrollpaneTabla;
     }
+
+    public Object[] getRepositorio() {
+        return repositorio;
+    }
+
+    public void setRepositorio(Object[] repositorio) {
+        this.repositorio = repositorio;
+    }
+
+    public Contexto getContexto() {
+        return contexto;
+    }
+
+    public void setContexto(Contexto contexto) {
+        this.contexto = contexto;
+    }
+    
+    
+
+
      
     
 }
