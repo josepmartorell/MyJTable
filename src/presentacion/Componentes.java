@@ -5,6 +5,8 @@
 package presentacion;
 
 import encapsuladores.Contexto;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -20,6 +22,9 @@ public class Componentes {
         private JScrollPane JScrollpaneTabla;
         private Object[] repositorio;
         private Contexto contexto;
+        private JComboBox seleccionIdSociedad;
+        private MyJTable pantallaJTable;
+        private JButton botonCargaSociedad;
 
     public JTable getjTable() {
         return jTable;
@@ -68,10 +73,32 @@ public class Componentes {
     public void setContexto(Contexto contexto) {
         this.contexto = contexto;
     }
-    
-    
 
+    public JComboBox getSeleccionIdSociedad() {
+        return seleccionIdSociedad;
+    }
 
+    public void setSeleccionIdSociedad(JComboBox seleccionIdSociedad) {
+        this.seleccionIdSociedad = seleccionIdSociedad;
+    }
+
+    public MyJTable getPantallaJTable() {
+        return pantallaJTable;
+    }
+
+    public void setPantallaJTable(MyJTable pantallaJTable) {
+        this.pantallaJTable = pantallaJTable;
+    }
+
+    public JButton getBotonCargaSociedad() {
+        return botonCargaSociedad;
+    }
+
+    public void setBotonCargaSociedad(JButton botonCargaSociedad) {
+        this.botonCargaSociedad = botonCargaSociedad;
+    }
+
+    
      
     
 }
