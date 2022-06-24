@@ -10,7 +10,7 @@
       </BASE_DATOS> 
       <BASE_DATOS nombre="MySQL">
          <CLASS_DRIVER>com.mysql.cj.jdbc.Driver</CLASS_DRIVER>
-         <URL_CONEXION>jdbc:mysql://localhost:3306/votaciones</URL_CONEXION>
+         <URL_CONEXION>jdbc:mysql://localhost:3306/sociedades</URL_CONEXION>
          <USUARIO>root</USUARIO>
          <PASSWORD>root123</PASSWORD>
       </BASE_DATOS>     
