@@ -45,6 +45,7 @@ public class MyJTable extends JFrame {
             componentes.setRepositorio(repositorio);
             componentes.setContexto(contexto);
             ubicarComponentes(componentes);
+            componentes.getModeloDatos().cargarTitulares(new TitularesNegocio().consultarTodos((BaseDatos)componentes.getRepositorio()[0])); 
             setVisible(true); 
         } catch (Exception exception)
             {  new GestorExcepciones().gestionarExcepcion(exception, contexto); }
