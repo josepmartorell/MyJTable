@@ -25,6 +25,7 @@ public class Componentes {
         private JComboBox seleccionIdSociedad;
         private MyJTable pantallaJTable;
         private JButton botonCargaSociedad;
+        private JButton botonEliminarRegistros;
 
     public JTable getjTable() {
         return jTable;
@@ -98,7 +99,14 @@ public class Componentes {
         this.botonCargaSociedad = botonCargaSociedad;
     }
 
+    public JButton getBotonEliminarRegistros() {
+        return botonEliminarRegistros;
+    }
+
+    public void setBotonEliminarRegistros(JButton botonEliminarRegistros) {
+        this.botonEliminarRegistros = botonEliminarRegistros;
+    }
     
-     
+
     
 }

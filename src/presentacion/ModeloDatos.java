@@ -48,6 +48,19 @@ public class ModeloDatos extends AbstractTableModel{
       componentes.getjTable().repaint();
     }
       
+    public void limpiarFilas(List<Titular> listaCopropietarios) { 
+
+      for (int i=0; i<listaCopropietarios.size(); i++)
+      {
+          Titular copropietario = listaCopropietarios.get(i);          
+          datos[i][0] = null;
+          datos[i][1] = null;
+          datos[i][2] = null;
+      }
+
+      componentes.getjTable().repaint();
+    }
+      
     @Override
     public int getRowCount() {
         return datos.length;

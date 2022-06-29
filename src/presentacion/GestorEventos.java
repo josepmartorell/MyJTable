@@ -7,6 +7,7 @@ package presentacion;
 import java.awt.event.ActionListener;
 import encapsuladores.BaseDatos;
 import encapsuladores.Sociedad;
+import excepciones.GestorExcepciones;
 import java.awt.event.ActionEvent;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -50,11 +51,19 @@ public class GestorEventos implements ActionListener {
                 sociedadCargada = sociedad;
                 try {
                     componentes.getModeloDatos().cargarTitulares(new TitularesNegocio().consultarSocios((BaseDatos)componentes.getRepositorio()[0], sociedadCargada));
-                } catch (Exception ex) {
-                    Logger.getLogger(GestorEventos.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception exception) {
+                    new GestorExcepciones().gestionarExcepcion(exception, componentes.getContexto());
                 }
              }
-         } 
+         }
+        else if (jButton == componentes.getBotonEliminarRegistros())
+        {
+            try {
+                componentes.getModeloDatos().limpiarFilas(new TitularesNegocio().consultarTodos((BaseDatos)componentes.getRepositorio()[0]));
+            } catch (Exception exception) {
+                 new GestorExcepciones().gestionarExcepcion(exception, componentes.getContexto());
+            }
+        }       
         else {JOptionPane.showMessageDialog(componentes.getPantallaJTable(), "Debe seleccionar y guardar previamente la sociedad");}                
     }            
     

@@ -10,6 +10,9 @@ import encapsuladores.Contexto;
 import encapsuladores.Sociedad;
 import excepciones.GestorExcepciones;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.List;
@@ -36,9 +39,16 @@ public class MyJTable extends JFrame {
         try{
             contexto = new Contexto("usuario1", obtenerIP());
             repositorio = new RepositorioXML().cargar();
-            setSize(900,550);
+            setSize(900, 520);
             setTitle("MyJTable");
-            setLocationRelativeTo(null);
+            
+            /*manual interface positioning*/
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            Point middle = new Point((screenSize.width / 2), screenSize.height / 2);
+            Point newLocation = new Point(middle.x - (getWidth() / 2), 
+                                          middle.y - (getHeight() / 2));
+            setLocation(newLocation);
+            
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             Componentes componentes = new Componentes();
             componentes.setMyJTable(this);
@@ -75,10 +85,7 @@ public class MyJTable extends JFrame {
         componentes.setJScrollpaneTabla(new JScrollPane(componentes.getjTable()));
         componentes.getJScrollpaneTabla().setBounds(10,10,880,310);
         add(componentes.getJScrollpaneTabla());
-        
-        /* ESTABLECEMOS EL ANCHO DE CADA UNA DE LAS COLUMNAS
-        REF: https://docs.oracle.com/javase/7/docs/api/javax/swing/table/TableColumn.html*/
-        
+              
         TableColumn columna[] = new TableColumn[3];
         columna[0] = componentes.getjTable().getColumnModel().getColumn(0);
         columna[0].setPreferredWidth(30);
@@ -89,8 +96,13 @@ public class MyJTable extends JFrame {
         columna[2] = componentes.getjTable().getColumnModel().getColumn(2);
         columna[2].setPreferredWidth(50);
         
+        componentes.setBotonEliminarRegistros(new JButton("Limpiar filas"));
+        componentes.getBotonEliminarRegistros().setBounds(43, 360, 807, 20);
+        componentes.getBotonEliminarRegistros().addActionListener(gestorEventos);     // REGISTRO DE ESCUCHA DE EVENTO DE BOTON
+        add(componentes.getBotonEliminarRegistros());
+        
         componentes.setBotonCargaSociedad(new JButton("Carga sociedad"));
-        componentes.getBotonCargaSociedad().setBounds(50, 400, 150, 35);
+        componentes.getBotonCargaSociedad().setBounds(43, 405, 150, 20);
         componentes.getBotonCargaSociedad().addActionListener(gestorEventos);     // REGISTRO DE ESCUCHA DE EVENTO DE BOTON
         add(componentes.getBotonCargaSociedad());
         
