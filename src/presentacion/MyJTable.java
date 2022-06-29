@@ -39,7 +39,7 @@ public class MyJTable extends JFrame {
         try{
             contexto = new Contexto("usuario1", obtenerIP());
             repositorio = new RepositorioXML().cargar();
-            setSize(900, 520);
+            setSize(900, 540);
             setTitle("MyJTable");
             
             /*manual interface positioning*/
@@ -96,18 +96,23 @@ public class MyJTable extends JFrame {
         columna[2] = componentes.getjTable().getColumnModel().getColumn(2);
         columna[2].setPreferredWidth(50);
         
-        componentes.setBotonEliminarRegistros(new JButton("Limpiar filas"));
-        componentes.getBotonEliminarRegistros().setBounds(43, 360, 807, 20);
-        componentes.getBotonEliminarRegistros().addActionListener(gestorEventos);     // REGISTRO DE ESCUCHA DE EVENTO DE BOTON
-        add(componentes.getBotonEliminarRegistros());
+        componentes.setBotonEliminarFila(new JButton("Eliminar fila"));
+        componentes.getBotonEliminarFila().setBounds(43, 360, 807, 20);
+        componentes.getBotonEliminarFila().addActionListener(gestorEventos);     // REGISTRO DE ESCUCHA DE EVENTO DE BOTON
+        add(componentes.getBotonEliminarFila());
+        
+        componentes.setBotonLimpiarFilas(new JButton("Limpiar filas"));
+        componentes.getBotonLimpiarFilas().setBounds(43, 405, 807, 20);
+        componentes.getBotonLimpiarFilas().addActionListener(gestorEventos);     // REGISTRO DE ESCUCHA DE EVENTO DE BOTON
+        add(componentes.getBotonLimpiarFilas());
         
         componentes.setBotonCargaSociedad(new JButton("Carga sociedad"));
-        componentes.getBotonCargaSociedad().setBounds(43, 405, 150, 20);
+        componentes.getBotonCargaSociedad().setBounds(43, 450, 150, 20);
         componentes.getBotonCargaSociedad().addActionListener(gestorEventos);     // REGISTRO DE ESCUCHA DE EVENTO DE BOTON
         add(componentes.getBotonCargaSociedad());
         
         componentes.setSeleccionIdSociedad(new JComboBox());
-        componentes.getSeleccionIdSociedad().setBounds(250, 405, 600, 20);
+        componentes.getSeleccionIdSociedad().setBounds(250, 450, 600, 20);
         componentes.getSeleccionIdSociedad().setBackground(Color.white);
         add(componentes.getSeleccionIdSociedad());
         cargarComboSociedades(componentes);

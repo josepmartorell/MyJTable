@@ -60,10 +60,18 @@ public class ModeloDatos extends AbstractTableModel{
 
       componentes.getjTable().repaint();
     }
+    
+    public void eliminarFila() {
+        
+        if (numeroFilas >= 1){
+            numeroFilas--;
+            fireTableRowsInserted(numeroFilas - 1, numeroFilas - 1);
+        }
+    }
       
     @Override
     public int getRowCount() {
-        return datos.length;
+        return numeroFilas;
     }
 
     @Override

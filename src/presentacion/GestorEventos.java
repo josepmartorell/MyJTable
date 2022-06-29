@@ -56,14 +56,22 @@ public class GestorEventos implements ActionListener {
                 }
              }
          }
-        else if (jButton == componentes.getBotonEliminarRegistros())
+        else if (jButton == componentes.getBotonLimpiarFilas())
         {
             try {
                 componentes.getModeloDatos().limpiarFilas(new TitularesNegocio().consultarTodos((BaseDatos)componentes.getRepositorio()[0]));
             } catch (Exception exception) {
                  new GestorExcepciones().gestionarExcepcion(exception, componentes.getContexto());
             }
-        }       
+        }
+        else if (jButton == componentes.getBotonEliminarFila())
+        {
+            try {
+                componentes.getModeloDatos().eliminarFila();
+            } catch (Exception exception) {
+                 new GestorExcepciones().gestionarExcepcion(exception, componentes.getContexto());
+            }
+        }
         else {JOptionPane.showMessageDialog(componentes.getPantallaJTable(), "Debe seleccionar y guardar previamente la sociedad");}                
     }            
     

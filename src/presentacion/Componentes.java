@@ -25,7 +25,8 @@ public class Componentes {
         private JComboBox seleccionIdSociedad;
         private MyJTable pantallaJTable;
         private JButton botonCargaSociedad;
-        private JButton botonEliminarRegistros;
+        private JButton botonLimpiarFilas;
+        private JButton botonEliminarFila;
 
     public JTable getjTable() {
         return jTable;
@@ -99,13 +100,22 @@ public class Componentes {
         this.botonCargaSociedad = botonCargaSociedad;
     }
 
-    public JButton getBotonEliminarRegistros() {
-        return botonEliminarRegistros;
+    public JButton getBotonLimpiarFilas() {
+        return botonLimpiarFilas;
     }
 
-    public void setBotonEliminarRegistros(JButton botonEliminarRegistros) {
-        this.botonEliminarRegistros = botonEliminarRegistros;
+    public void setBotonLimpiarFilas(JButton botonLimpiarFilas) {
+        this.botonLimpiarFilas = botonLimpiarFilas;
     }
+
+    public JButton getBotonEliminarFila() {
+        return botonEliminarFila;
+    }
+
+    public void setBotonEliminarFila(JButton botonEliminarFila) {
+        this.botonEliminarFila = botonEliminarFila;
+    }
+
     
 
     
